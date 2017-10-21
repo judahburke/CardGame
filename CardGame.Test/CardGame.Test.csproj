@@ -48,9 +48,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CardTest.cs" />
+    <Compile Include="Lib\CardTests.cs" />
+    <Compile Include="Lib\DeckTests.cs" />
+    <Compile Include="Lib\HandTests.cs" />
+    <Compile Include="PlayerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DealerTest.cs" />
+    <Compile Include="Lib\DealerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
