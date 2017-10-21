@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGame", "CardGame.General\CardGame.csproj", "{4E94AC4E-5715-4465-BEE7-2D03379773D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGame.Lib", "CardGame.Lib\CardGame.Lib.csproj", "{512C2028-82BA-4722-A41A-1A0E8D9D2C9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGame.Test", "CardGame.Test\CardGame.Test.csproj", "{36DCC1A2-0B51-4D10-AC6E-A5266AF9D2B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E94AC4E-5715-4465-BEE7-2D03379773D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E94AC4E-5715-4465-BEE7-2D03379773D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E94AC4E-5715-4465-BEE7-2D03379773D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E94AC4E-5715-4465-BEE7-2D03379773D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{512C2028-82BA-4722-A41A-1A0E8D9D2C9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{512C2028-82BA-4722-A41A-1A0E8D9D2C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{512C2028-82BA-4722-A41A-1A0E8D9D2C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{512C2028-82BA-4722-A41A-1A0E8D9D2C9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36DCC1A2-0B51-4D10-AC6E-A5266AF9D2B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36DCC1A2-0B51-4D10-AC6E-A5266AF9D2B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36DCC1A2-0B51-4D10-AC6E-A5266AF9D2B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36DCC1A2-0B51-4D10-AC6E-A5266AF9D2B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BDA915F-2B20-47EF-9206-3EEEBCC4203E}
+	EndGlobalSection
+EndGlobal
