@@ -7,3 +7,4 @@ C:\Users\Judah\Documents\GitHub\CardGame\CardGame.General\obj\Debug\CardGame.Gen
 C:\Users\Judah\Documents\GitHub\CardGame\CardGame.General\obj\Debug\CardGame.General.pdb
 C:\Users\Judah\Documents\GitHub\CardGame\CardGame.General\bin\Debug\CardGame.Lib.dll
 C:\Users\Judah\Documents\GitHub\CardGame\CardGame.General\bin\Debug\CardGame.Lib.pdb
+C:\Users\Judah\Documents\GitHub\CardGame\CardGame.General\bin\Debug\NLog.config

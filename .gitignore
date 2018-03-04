@@ -1,6 +1,12 @@
 
 *.sqlite
 *.sqlite-journal
-.vs/CardGame/v15/.suo
-.vs/CardGame/v15/sqlite3/storage.ide
+*.suo
+*storage.ide
 .vs/VSWorkspaceState.json
+*.exe
+*.lock
+*.ide-shm
+*.ide-wal
+*.ide
+.vs/CardGame/v15/.suo
