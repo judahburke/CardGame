@@ -9,4 +9,8 @@
 *.ide-shm
 *.ide-wal
 *.ide
-.vs/CardGame/v15/.suo
+
+*.suo
+
+obj
+bin
