@@ -11,7 +11,7 @@ namespace CardGame.Helpers
             public string Table { get; set; }
         }
 
-        private static string DbCardGame => "Server=localhost\\SQLEXPRESS; Database=CardGame; Trusted_Connection=True; Connection LifeTime=300;";
+        private static string DbCardGame => "Server=Judah-PC\\SQLEXPRESS; Database=CardGame; Trusted_Connection=True; Connection LifeTime=300;";
 
         public static DatabaseConnection Logging = new DatabaseConnection
         { Connection = DbCardGame, Schema = "dbo", Table = "Log" };

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Data;
 using Serilog;
 using Serilog.Sinks.MSSqlServer;
 
@@ -18,11 +19,12 @@ namespace CardGame.Helpers
             options.LogEvent.ExcludeAdditionalProperties = true;
             //options.TimeStamp.ColumnName = "CreatedAtDate";
             options.TimeStamp.ConvertToUtc = true;
-            options.AdditionalDataColumns = new System.Data.DataColumn[]
-            {
-                new System.Data.DataColumn { ColumnName = "CreatedByUser" },
-                new System.Data.DataColumn { ColumnName = "CreatedByHost" }
-            };
+            //options.AdditionalDataColumns = new System.Data.DataColumn[]
+            //{
+            //    new DataColumn {ColumnName = "CreatedAtDate" }
+            //    new DataColumn { ColumnName = "CreatedByUser" },
+            //    new DataColumn { ColumnName = "CreatedByHost" }
+            //};
             return options;
         }
 

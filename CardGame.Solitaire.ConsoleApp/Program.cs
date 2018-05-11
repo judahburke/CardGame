@@ -16,7 +16,7 @@ namespace CardGame.Solitaire.ConsoleApp
         static void Main(string[] args)
         {
             LogHelper.ConfigureLog();
-            Print.ConfigurePrint(TextLanguage.English, MyTableu);
+            Print.ConfigurePrint(TextLanguage.English);
             Print.Game(true);
             IsGameStarted = false;
             var key = new ConsoleKeyInfo();
@@ -41,7 +41,7 @@ namespace CardGame.Solitaire.ConsoleApp
                 }
                 catch (Exception ex)
                 {
-                    Serilog.Log.Error(ex, "Game error with key {Key} and Tableu {Tableu}", key.Key, MyTableu);
+                    //Serilog.Log.Error(ex, "Game error with key {Key} and Tableu {Tableu}", key.Key, MyTableu); // todo: add error string
                     Print.Alert(ex.Message);
                 }
             }

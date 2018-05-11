@@ -87,17 +87,14 @@ namespace CardGame.Core
             return sortedDeck;
         }
 
-        public static IEnumerable<ICard> ShuffledDeck(int num = 1)
+        public static IEnumerable<ICard> ShuffledDeck(int numberOfShuffles = 1)
         {
             // Get a new IEnumerable of sorted cards
             IEnumerable<ICard> sorted = SortedDeck();
 
             IEnumerable<ICard> shuffled = Shuffle(sorted);
-            while (num > 0)
-            {
+            for (int i=0; i< numberOfShuffles; i++)
                 shuffled = Shuffle(shuffled);
-                num--;
-            }
 
             // Return the shuffled cards
             return shuffled;

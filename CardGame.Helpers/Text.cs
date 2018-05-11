@@ -27,6 +27,7 @@ namespace CardGame.Helpers
                     _finalQuit = "Press any key to exit... ";
 
                     _alertInvalid = "INVALID";
+                    _alertNullObject = "{0} object is null";
                     _btnNewGame = "New Game";
                     _btnNewGameDesc = "Start new game";
                     _btnHint = "Get Hint";
@@ -60,6 +61,7 @@ namespace CardGame.Helpers
         private static string _finalQuit;
 
         private static string _alertInvalid;
+        private static string _alertNullObject;
         private static string _btnNewGame;
         private static string _btnNewGameDesc;
         private static string _btnHint;
@@ -83,6 +85,7 @@ namespace CardGame.Helpers
         public static string FinalQuit { get => _finalQuit; }
 
         public static string AlertInvalid { get => _alertInvalid; }
+        public static string AlertNullObject { get => _alertNullObject; }
         public static string BtnNewGame { get => _btnNewGame; }
         public static string BtnNewGameDesc { get => _btnNewGameDesc; }
         public static string BtnHint { get => _btnHint; }

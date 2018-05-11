@@ -12,14 +12,16 @@ namespace CardGame.Solitaire.ConsoleApp
         private static readonly int MsgLine = 3;
         private static readonly int EndLine = 17;
 
-        public static void ConfigurePrint(TextLanguage language = TextLanguage.English
-            , IDeck deck = null)
-        { Text.SetTextLanguage(language); Console.SetWindowSize(101, 20); }
-        public static void SetMsgLocation(bool readNew = false)
-        { Console.SetCursorPosition(readNew ? 0 : MsgTab, MsgLine); }
-        public static void SetEndLocation()
-        { Console.SetCursorPosition(0, EndLine); }
 
+        public static void ConfigurePrint(TextLanguage language = TextLanguage.English)
+        {
+            Text.SetTextLanguage(language);
+            Console.SetWindowSize(101, 20);
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+        }
+        public static void SetMsgLocation(bool readNew = false) { Console.SetCursorPosition(readNew ? 0 : MsgTab, MsgLine); }
+        public static void SetEndLocation() { Console.SetCursorPosition(0, EndLine); }
+        
 
         public static void Game(bool newGame = false)
         {
@@ -40,7 +42,7 @@ namespace CardGame.Solitaire.ConsoleApp
                 Console.WriteLine();
                 Console.WriteLine();
                 if (Program.MyTableu != null) AllCards();
-                else Alert($"{Text.AlertInvalid} - deck was not passed"); //todo: get Text code for error
+                else throw new Exception(string.Format(Text.AlertNullObject,$"{Program.MyTableu}"));
             }
         }
         public static void Directions(bool newGame = false)
@@ -90,6 +92,28 @@ namespace CardGame.Solitaire.ConsoleApp
             Console.WriteLine(dealdiscardHeader);
             Console.WriteLine(dealdiscard);
         }
+
+
+        public static void Note(string message)
+        {
+            SetMsgLocation();
+            Console.Write(message.PadRight(Console.BufferWidth - MsgTab));
+        }
+        public static void Alert(string message)
+        {
+            SetMsgLocation();
+            Console.Write($"{Text.AlertInvalid} - {message}".PadRight(Console.BufferWidth - MsgTab));
+        }
+        public static void Final(string message = null)
+        {
+            SetEndLocation();
+            Console.WriteLine(message ?? Text.Thanks);
+            Console.WriteLine(Text.FinalQuit);
+            Console.ReadKey();
+            Console.Clear();
+        }
+
+
         public static string CardString(ICard card = null)
         {
             var suitval = "";
@@ -98,13 +122,13 @@ namespace CardGame.Solitaire.ConsoleApp
             switch (card.Suit)
             {
                 case Core.Models.CardSuit.Clubs:
-                    suitval += (char)5; break; // \u2663 &#9827; CLEAR -> \u2667, &#9831;
+                    suitval += '\u2663'; break; // \u2663 &#9827; CLEAR -> \u2667, &#9831;
                 case Core.Models.CardSuit.Diamonds:
-                    suitval += (char)4; break; // \u2666 &#9830; CLEAR -> \u2662, &#9826;
+                    suitval += '\u2666'; break; // \u2666 &#9830; CLEAR -> \u2662, &#9826;
                 case Core.Models.CardSuit.Hearts:
-                    suitval += (char)3; break; // \u2665 &#9829; CLEAR -> \u2661, &#9825;
+                    suitval += '\u2665'; break; // \u2665 &#9829; CLEAR -> \u2661, &#9825;
                 case Core.Models.CardSuit.Spades:
-                    suitval += (char)6; break; // \u2660 &#9824; CLEAR -> \u2664, &#9828;
+                    suitval += '\u2660'; break; // \u2660 &#9824; CLEAR -> \u2664, &#9828;
                 default:
                     break;
             }
@@ -132,23 +156,6 @@ namespace CardGame.Solitaire.ConsoleApp
         {
             return $"[{stack.Count.ToString("00")}]";
         }
-        public static void Note(string message)
-        {
-            SetMsgLocation();
-            Console.Write(message.PadRight(Console.BufferWidth - MsgTab));
-        }
-        public static void Alert(string message)
-        {
-            SetMsgLocation();
-            Console.Write($"{Text.AlertInvalid} - {message}".PadRight(Console.BufferWidth - MsgTab));
-        }
-        public static void Final(string message = null)
-        {
-            SetEndLocation();
-            Console.WriteLine(message ?? Text.Thanks);
-            Console.WriteLine(Text.FinalQuit);
-            Console.ReadKey();
-            Console.Clear();
-        }
+
     }
 }
