@@ -31,7 +31,6 @@ namespace CardGame.Helpers
             Serilog.Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Verbose()
                 .Enrich.FromLogContext()
-                .Destructure.ByTransforming<>
                 .WriteTo.Logger(new LoggerConfiguration()
                     .MinimumLevel.Information()
                     .WriteTo.MSSqlServer(ConnectionStrings.Logging.Connection

@@ -10,7 +10,7 @@ namespace CardGame.Solitaire.ConsoleApp
     {
         private static readonly int MsgTab = 5;
         private static readonly int MsgLine = 3;
-        private static readonly int EndLine = 18;
+        private static readonly int EndLine = 17;
 
         public static void ConfigurePrint(TextLanguage language = TextLanguage.English
             , IDeck deck = null)
