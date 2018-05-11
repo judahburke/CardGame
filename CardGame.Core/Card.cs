@@ -14,13 +14,18 @@ namespace CardGame.Core
             Suit = suit;
             Value = val;
         }
+        public Card(Card card)
+        {
+            Suit = card.Suit;
+            Value = card.Value;
+        }
         public string WriteCard()
         {
             return Value.ToString() + " of " + Suit.ToString();
         }
 
-        public CardSuit Suit { get; set; }
-        public CardValue Value { get; set; }
+        //public CardSuit Suit { get; set; }
+        //public CardValue Value { get; set; }
     }
 
 }

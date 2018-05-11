@@ -4,9 +4,13 @@ using System.Text;
 
 namespace CardGame.Core.Models
 {
+    /// <summary>
+    /// Card model with Suit and Value
+    /// http://www.solitairelaboratory.com/glossary.html
+    /// </summary>
     public class ICard
     {
-        public CardSuit CardSuit { get; set; }
-        public CardValue CardValue { get; set; }
+        public CardSuit Suit { get; set; }
+        public CardValue Value { get; set; }
     }
 }

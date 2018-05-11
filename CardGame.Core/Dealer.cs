@@ -9,9 +9,9 @@ namespace CardGame.Core
 {
     public class Dealer
     {
-        public static List<ICard> SortedDeck(bool hasSingleJoker = false, bool hasSuitedJoker = false)
+        public static IEnumerable<ICard> SortedDeck(bool hasSingleJoker = false, bool hasSuitedJoker = false)
         {
-            List<ICard> sortedDeck = new List<ICard>();
+            var sortedDeck = new List<ICard>();
 
             // Add Suit of Hearts
             sortedDeck.Add(new Card(CardSuit.Hearts, CardValue.Ace));
@@ -87,13 +87,13 @@ namespace CardGame.Core
             return sortedDeck;
         }
 
-        public static List<ICard> ShuffledDeck(int num = 1)
+        public static IEnumerable<ICard> ShuffledDeck(int num = 1)
         {
-            // Get a new list of sorted cards
-            List<ICard> sorted = SortedDeck();
+            // Get a new IEnumerable of sorted cards
+            IEnumerable<ICard> sorted = SortedDeck();
 
-            List<ICard> shuffled = Shuffle(sorted);
-            while (num > 1)
+            IEnumerable<ICard> shuffled = Shuffle(sorted);
+            while (num > 0)
             {
                 shuffled = Shuffle(shuffled);
                 num--;
@@ -103,44 +103,45 @@ namespace CardGame.Core
             return shuffled;
         }
 
-        public static List<ICard> Shuffle(List<ICard> unshuffled)
+        public static IEnumerable<ICard> Shuffle(IEnumerable<ICard> unshuffled)
         {
-            List<ICard> shuffled = new List<ICard>();
+            var shuffled = new List<ICard>(); // todo: IEnumerable in dealer/shuffle
             Random random = new Random();
 
             int location = 0;
             foreach (ICard card in unshuffled)
             {
                 shuffled.Insert(location, card);
-                location = random.Next(0, shuffled.Count - 1);
+                location = random.Next(0, shuffled.Count() - 1);
             }
 
-            return shuffled;
+            return shuffled; // new Stack<ICard>(shuffled)
         }
 
         public static void ShuffleOldDeck(IDeck d)
         {
             // Deal all cards in the incoming deck
-            d.Dealt.AddRange(d.Undealt);
-            d.Undealt.RemoveRange(0, d.Undealt.Count);
+            d.Dealt.ToList().AddRange(d.Undealt);
+            d.Undealt.ToList().RemoveRange(0, d.Undealt.Count());
 
             // Shuffle the dealt cards back into the deck
             d.Undealt = Shuffle(d.Dealt);
-            d.Dealt = new List<ICard>();
+            d.Dealt = new List<ICard>(); //todo: IEnumerable in Dealer/ShuffleOldDeck
         }
 
-        public static List<Hand> Deal(int players, int cards, IDeck deck)
+        public static IEnumerable<Hand> Deal(int players, int cards, IDeck deck)
         {
-            List<Hand> trick = new List<Hand>();
+            var trick = new List<Hand>();
+            var dealt = new Stack<ICard>(deck.Dealt);
+            var undealt = new Stack<ICard>(deck.Dealt);
             for (int i = 0; i < players; i++)
             {
-                List<ICard> myHand = new List<ICard>();
+                var myHand = new List<ICard>();
 
                 for (int j = 0; j < cards; j++)
                 {
-                    ICard c = deck.Undealt[0];
-                    deck.Dealt.Add(c);
-                    deck.Undealt.Remove(c);
+                    ICard c = undealt.Peek();
+                    dealt.Push(undealt.Pop());
 
                     myHand.Add(c);
                 }

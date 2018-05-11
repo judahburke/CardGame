@@ -2,15 +2,12 @@
 *.sqlite
 *.sqlite-journal
 *.suo
-*storage.ide
-.vs/VSWorkspaceState.json
 *.exe
 *.lock
 *.ide-shm
 *.ide-wal
 *.ide
-
 *.suo
-
 obj
 bin
+.vs/*

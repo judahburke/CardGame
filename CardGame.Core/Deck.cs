@@ -20,9 +20,5 @@ namespace CardGame.Core
             HighValue = high;
             HasJokers = hasJokers;
         }
-
-        public CardValue HighValue { get; set; }
-        public CardSuit TrumpSuit { get; set; }
-        public bool HasJokers { get; set; }
     }
 }
