@@ -11,22 +11,37 @@ namespace CardGame.Solitaire.ConsoleApp
         public Tableu(int terraces = 5)
         {
             TerraceCount = terraces;
-            TerraceStackList = new List<Stack<ICard>>();
-            for (var i = 0; i < terraces; i++)
-                TerraceStackList.Add(new Stack<ICard>());
-            DealtStack = new Stack<ICard>();
-            UndealtStack = new Stack<ICard>(Dealer.SortedDeck()); 
+            Shuffle(10, true);
         }
 
-
-        public List<Stack<ICard>> TerraceStackList { get; set; }
-        public Stack<ICard> UndealtStack { get; set; }
-        public Stack<ICard> DealtStack { get; set; }
-
         public int TerraceCount { get; set; }
+        public List<Stack<Card>> TerraceList { get; set; }
+        public Stack<Card> UndealtCards { get; set; }
+        public Stack<Card> DealtCards { get; set; }
+               
+
+        public void Shuffle(int shuffles = 10, bool allCards = true)
+        {
+            if (allCards)
+            {
+                TerraceList = new List<Stack<Card>>();
+                for (var i = 0; i < TerraceCount; i++)
+                    TerraceList.Add(new Stack<Card>());
+                DealtCards = new Stack<Card>();
+                UndealtCards = new Stack<Card>(Dealer.ShuffledDeck(shuffles));
+            }
+            else
+            {
+                UndealtCards = new Stack<Card>(Dealer.ShuffledDeck(shuffles));
+            }
+        }
+        public Card Deal()
+        {
+            return UndealtCards.Pop();
+        }
     }
 
-    public class Terrace : Stack<ICard>
+    public class Terrace : Stack<Card>
     {
         
     }

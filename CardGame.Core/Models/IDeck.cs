@@ -8,13 +8,13 @@ namespace CardGame.Core.Models
     /// Deck of cards
     /// http://www.solitairelaboratory.com/glossary.html
     /// </summary>
-    public class IDeck
+    public interface IDeck
     {
-        public IEnumerable<ICard> Undealt { get; set; }
-        public IEnumerable<ICard> Dealt { get; set; }
+        Card Deal();
+        void Shuffle(int shuffles, bool allCards);
+        //void Sort(bool bySuit, bool byValue);
+        //void Cut(int loc);
 
-        public CardValue HighValue { get; set; }
-        public CardSuit TrumpSuit { get; set; }
-        public bool HasJokers { get; set; }
+        Stack<Card> UndealtCards { get; set; }
     }
 }

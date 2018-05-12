@@ -1,4 +1,5 @@
-﻿using CardGame.Core.Models;
+﻿using CardGame.Core;
+using CardGame.Core.Models;
 using CardGame.Helpers;
 using System;
 using System.Collections.Generic;
@@ -48,7 +49,7 @@ namespace CardGame.Solitaire.ConsoleApp
         public static void Directions(bool newGame = false)
         {
             int l = 18, r = 20;
-            bool canDeal = Program.MyTableu?.UndealtStack.Count > 0;
+            bool canDeal = Program.MyTableu?.UndealtCards.Count > 0;
             var dir = string.Empty;
             dir += $"(N) {Text.BtnNewGame}".PadLeft(l).PadRight(r);
             if (!newGame && canDeal) dir += $"(D) {Text.BtnDealDesc}".PadLeft(l).PadRight(r);
@@ -69,7 +70,7 @@ namespace CardGame.Solitaire.ConsoleApp
                 , dealdiscardHeader = string.Empty;
 
             // Write Terraces to screen
-            foreach (var t in Program.MyTableu.TerraceStackList)
+            foreach (var t in Program.MyTableu.TerraceList)
             {
                 terraceHeader += $"#{i++} ({t.Count} left)".ToString().PadLeft(l).PadRight(r);   
                 if (t.Count > 0)
@@ -87,8 +88,8 @@ namespace CardGame.Solitaire.ConsoleApp
             // Write Undealt/Dealt or Deal/Discard to screen
             dealdiscardHeader = "Discard".PadLeft(width / 3).PadRight(width / 2) 
                 + "Deal".PadRight(width / 3).PadLeft(width / 2);
-            dealdiscard = CardString(Program.MyTableu.DealtStack.Peek()).PadLeft(width / 3).PadRight(width / 2)
-                + $"[{Program.MyTableu.UndealtStack.Count}]".PadRight(width / 3).PadLeft(width / 2);
+            dealdiscard = CardString(Program.MyTableu.DealtCards.Peek()).PadLeft(width / 3).PadRight(width / 2)
+                + $"[{Program.MyTableu.UndealtCards.Count}]".PadRight(width / 3).PadLeft(width / 2);
             Console.WriteLine(dealdiscardHeader);
             Console.WriteLine(dealdiscard);
         }
@@ -114,7 +115,7 @@ namespace CardGame.Solitaire.ConsoleApp
         }
 
 
-        public static string CardString(ICard card = null)
+        public static string CardString(Card card = null)
         {
             var suitval = "";
             if (card == null)
@@ -152,7 +153,7 @@ namespace CardGame.Solitaire.ConsoleApp
             }
             return suitval;
         }
-        public static string CardBack(Stack<ICard> stack)
+        public static string CardBack(Stack<Card> stack)
         {
             return $"[{stack.Count.ToString("00")}]";
         }

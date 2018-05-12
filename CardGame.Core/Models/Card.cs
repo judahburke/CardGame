@@ -1,13 +1,12 @@
-﻿using CardGame.Core.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CardGame.Core
+namespace CardGame.Core.Models
 {
-    public class Card : ICard
+    public class Card
     {
         public Card(CardSuit suit, CardValue val)
         {
@@ -24,8 +23,8 @@ namespace CardGame.Core
             return Value.ToString() + " of " + Suit.ToString();
         }
 
-        //public CardSuit Suit { get; set; }
-        //public CardValue Value { get; set; }
+        public CardSuit Suit { get; set; }
+        public CardValue Value { get; set; }
     }
 
 }

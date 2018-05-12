@@ -20,6 +20,7 @@ namespace CardGame.Core.Models
         Queen = 12,
         King = 13,
         Joker = 100,
+        Wild = 101,
     }
 
     public enum CardValueAce

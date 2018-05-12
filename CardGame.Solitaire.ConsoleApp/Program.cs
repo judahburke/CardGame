@@ -16,6 +16,7 @@ namespace CardGame.Solitaire.ConsoleApp
         static void Main(string[] args)
         {
             LogHelper.ConfigureLog();
+            CardLogic.Rules = new CardRules(); // todo: set up card rules for game
             Print.ConfigurePrint(TextLanguage.English);
             Print.Game(true);
             IsGameStarted = false;
@@ -51,30 +52,29 @@ namespace CardGame.Solitaire.ConsoleApp
         public static void NewGame()
         {
             MyTableu = new Tableu();
-            MyTableu.UndealtStack = new Stack<ICard>(Dealer.ShuffledDeck(10));
             for (int i = 0; i < MyTableu.TerraceCount; i++) // Get 5 Cards...
-                foreach (var terraceStack in MyTableu.TerraceStackList) // // For each PileStack...
-                    CardActions.Move(MyTableu.UndealtStack, terraceStack); // And Push Cards From UndealtStack
-            CardActions.Move(MyTableu.UndealtStack, MyTableu.DealtStack);
+                foreach (var terrace in MyTableu.TerraceList) // // For each PileStack...
+                    CardActions.Move(MyTableu.UndealtCards, terrace); // And Push Cards From UndealtStack
+            CardActions.Move(MyTableu.UndealtCards, MyTableu.DealtCards);
             IsGameStarted = true;
             Print.Game(false);
         }
         public static void Deal()
         {
-            if (MyTableu.UndealtStack.Count == 0)
+            if (MyTableu.UndealtCards.Count == 0)
                 { Print.Alert(Text.DeckEmpty); return; }
-            CardActions.Move(MyTableu.UndealtStack, MyTableu.DealtStack);
+            CardActions.Move(MyTableu.UndealtCards, MyTableu.DealtCards);
             Print.Game(false);
         }
         public static void Terrace(int index)
         {
             if (index < 0 || index >= MyTableu.TerraceCount
-                || !CardActions.Compare(MyTableu.TerraceStackList[index], MyTableu.DealtStack))
+                || !CardActions.Compare(MyTableu.TerraceList[index], MyTableu.DealtCards))
             { Print.Alert(Text.InvalidCard); return; }
-            CardActions.Move(MyTableu.TerraceStackList[index], MyTableu.DealtStack);
+            CardActions.Move(MyTableu.TerraceList[index], MyTableu.DealtCards);
 
 
-            foreach (var terrace in MyTableu.TerraceStackList)
+            foreach (var terrace in MyTableu.TerraceList)
                 if (terrace.Count > 0)
                     { Print.Game(false); return; }
             IsGameStarted = false;
@@ -84,10 +84,10 @@ namespace CardGame.Solitaire.ConsoleApp
         public static void GetHint()
         {
             for (var t=0;t<MyTableu.TerraceCount;t++)
-                if (CardActions.Compare(MyTableu.TerraceStackList[t].Peek(), MyTableu.DealtStack.Peek()))
+                if (CardLogic.AreCompatible(MyTableu.TerraceList[t].Peek(), MyTableu.DealtCards.Peek()))
                     { Print.Note(string.Format(Text.HintValue, t)); return; }
 
-            if (MyTableu.UndealtStack.Count > 0)
+            if (MyTableu.UndealtCards.Count > 0)
                 { Print.Note(Text.DealAgain); return; }
             IsGameStarted = false;
             Print.Game(false);
