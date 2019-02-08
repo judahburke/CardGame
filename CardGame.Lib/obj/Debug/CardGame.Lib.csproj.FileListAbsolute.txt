@@ -1,9 +1,0 @@
-C:\Users\Judah\Documents\GitHub\CardGame\CardGame.Lib\bin\Debug\CardGame.Lib.dll
-C:\Users\Judah\Documents\GitHub\CardGame\CardGame.Lib\bin\Debug\CardGame.Lib.pdb
-C:\Users\Judah\Documents\GitHub\CardGame\CardGame.Lib\obj\Debug\CardGame.Lib.csprojResolveAssemblyReference.cache
-C:\Users\Judah\Documents\GitHub\CardGame\CardGame.Lib\obj\Debug\CardGame.Lib.csproj.CoreCompileInputs.cache
-C:\Users\Judah\Documents\GitHub\CardGame\CardGame.Lib\obj\Debug\CardGame.Lib.dll
-C:\Users\Judah\Documents\GitHub\CardGame\CardGame.Lib\obj\Debug\CardGame.Lib.pdb
-C:\Users\Judah\Documents\GitHub\CardGame\CardGame.Lib\bin\Debug\NLog.config
-C:\Users\Judah\Documents\GitHub\CardGame\CardGame.Lib\bin\Debug\NLog.dll
-C:\Users\Judah\Documents\GitHub\CardGame\CardGame.Lib\bin\Debug\NLog.xml
