@@ -7,9 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{8608F6F9-B78
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardGame.Core", "CardGame.Core\CardGame.Core.csproj", "{AF42724E-AD94-4405-AFC4-69B0ED954B12}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardGame.Solitaire.ConsoleApp", "CardGame.Solitaire.ConsoleApp\CardGame.Solitaire.ConsoleApp.csproj", "{8EC8F169-A436-490F-ADEE-C09A0C1148FD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F3CC93A8-5DD1-471E-BC1A-CCD587C87D24}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardGame.Helpers", "CardGame.Helpers\CardGame.Helpers.csproj", "{1CCE91BE-9ECB-4A61-86A4-245D1269B25E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solitaire", "Solitaire", "{A9CA3964-2EE4-416F-A1C7-A0A42B4FE3CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGame.Solitaire.Console", "CardGame.Solitaire.Console\CardGame.Solitaire.Console.csproj", "{D513DC22-77D4-499D-B51E-A3926C75B969}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,17 +23,17 @@ Global
 		{AF42724E-AD94-4405-AFC4-69B0ED954B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF42724E-AD94-4405-AFC4-69B0ED954B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF42724E-AD94-4405-AFC4-69B0ED954B12}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8EC8F169-A436-490F-ADEE-C09A0C1148FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EC8F169-A436-490F-ADEE-C09A0C1148FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EC8F169-A436-490F-ADEE-C09A0C1148FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EC8F169-A436-490F-ADEE-C09A0C1148FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1CCE91BE-9ECB-4A61-86A4-245D1269B25E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1CCE91BE-9ECB-4A61-86A4-245D1269B25E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1CCE91BE-9ECB-4A61-86A4-245D1269B25E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1CCE91BE-9ECB-4A61-86A4-245D1269B25E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D513DC22-77D4-499D-B51E-A3926C75B969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D513DC22-77D4-499D-B51E-A3926C75B969}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D513DC22-77D4-499D-B51E-A3926C75B969}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D513DC22-77D4-499D-B51E-A3926C75B969}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AF42724E-AD94-4405-AFC4-69B0ED954B12} = {F3CC93A8-5DD1-471E-BC1A-CCD587C87D24}
+		{D513DC22-77D4-499D-B51E-A3926C75B969} = {A9CA3964-2EE4-416F-A1C7-A0A42B4FE3CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0BDA915F-2B20-47EF-9206-3EEEBCC4203E}
