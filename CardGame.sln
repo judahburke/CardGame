@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2003
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{8608F6F9-B78B-468B-A511-CC1C47E17B74}"
 EndProject
@@ -11,7 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F3CC93A8-5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solitaire", "Solitaire", "{A9CA3964-2EE4-416F-A1C7-A0A42B4FE3CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGame.Solitaire.Console", "CardGame.Solitaire.Console\CardGame.Solitaire.Console.csproj", "{D513DC22-77D4-499D-B51E-A3926C75B969}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardGame.Solitaire.Console", "CardGame.Solitaire.Console\CardGame.Solitaire.Console.csproj", "{D513DC22-77D4-499D-B51E-A3926C75B969}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "CardGame.Solitaire.TestTS", "CardGame.Solitaire.TestTS\CardGame.Solitaire.TestTS.njsproj", "{34B9373C-599D-40CB-863E-864DEC0F128D}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "CardGame.Solitaire.PlayTS", "CardGame.Solitaire.PlayTS\CardGame.Solitaire.PlayTS.njsproj", "{BCFB5649-EEDD-46F9-8BD8-D54EFCC3B479}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGame.Solitaire.KlondikeVue", "CardGame.Solitaire.KlondikeVue\CardGame.Solitaire.KlondikeVue.csproj", "{7766E2F4-479E-4B16-9256-9BA61CE9217D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{D513DC22-77D4-499D-B51E-A3926C75B969}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D513DC22-77D4-499D-B51E-A3926C75B969}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D513DC22-77D4-499D-B51E-A3926C75B969}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34B9373C-599D-40CB-863E-864DEC0F128D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34B9373C-599D-40CB-863E-864DEC0F128D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34B9373C-599D-40CB-863E-864DEC0F128D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34B9373C-599D-40CB-863E-864DEC0F128D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCFB5649-EEDD-46F9-8BD8-D54EFCC3B479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCFB5649-EEDD-46F9-8BD8-D54EFCC3B479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCFB5649-EEDD-46F9-8BD8-D54EFCC3B479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCFB5649-EEDD-46F9-8BD8-D54EFCC3B479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7766E2F4-479E-4B16-9256-9BA61CE9217D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7766E2F4-479E-4B16-9256-9BA61CE9217D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7766E2F4-479E-4B16-9256-9BA61CE9217D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7766E2F4-479E-4B16-9256-9BA61CE9217D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,6 +52,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AF42724E-AD94-4405-AFC4-69B0ED954B12} = {F3CC93A8-5DD1-471E-BC1A-CCD587C87D24}
 		{D513DC22-77D4-499D-B51E-A3926C75B969} = {A9CA3964-2EE4-416F-A1C7-A0A42B4FE3CE}
+		{34B9373C-599D-40CB-863E-864DEC0F128D} = {8608F6F9-B78B-468B-A511-CC1C47E17B74}
+		{BCFB5649-EEDD-46F9-8BD8-D54EFCC3B479} = {8608F6F9-B78B-468B-A511-CC1C47E17B74}
+		{7766E2F4-479E-4B16-9256-9BA61CE9217D} = {A9CA3964-2EE4-416F-A1C7-A0A42B4FE3CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0BDA915F-2B20-47EF-9206-3EEEBCC4203E}
