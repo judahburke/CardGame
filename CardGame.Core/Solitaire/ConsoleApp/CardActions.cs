@@ -16,7 +16,7 @@ namespace CardGame.Helpers.Solitaire.ConsoleApp
             }
             catch (Exception)
             {
-                Serilog.Log.Verbose("Whoops, tried to push top of {Source} to {Destination}", source, destination);
+                //Serilog.Log.Verbose("Whoops, tried to push top of {Source} to {Destination}", source, destination);
             }
         }
 
@@ -28,7 +28,7 @@ namespace CardGame.Helpers.Solitaire.ConsoleApp
             }
             catch (Exception)
             {
-                Serilog.Log.Warning("Whoops, tried to compare top of {Source} with {Destination}", source, destination);
+                //Serilog.Log.Warning("Whoops, tried to compare top of {Source} with {Destination}", source, destination);
             }
             return false;
         }
@@ -41,7 +41,7 @@ namespace CardGame.Helpers.Solitaire.ConsoleApp
             }
             catch (Exception)
             {
-                Serilog.Log.Warning("Whoops, tried to compare {Source} with {Destination}", source, destination);
+                //Serilog.Log.Warning("Whoops, tried to compare {Source} with {Destination}", source, destination);
             }
             return false;
         }

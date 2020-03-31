@@ -15,7 +15,6 @@ namespace CardGame.Solitaire.ConsoleApp
 
         static void Main(string[] args)
         {
-            LogHelper.ConfigureLog();
             CardLogic.Rules = new CardRules(); // todo: set up card rules for game
             Print.ConfigurePrint(TextLanguage.English);
             Print.Game(true);
